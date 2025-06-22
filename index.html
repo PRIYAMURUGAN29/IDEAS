@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Health Risk Predictor</title>
+</head>
+<body>
+    <h1>AirAware: Lung Health Risk Prediction</h1>
+    <form method="POST">
+        Age: <input type="number" name="age" required><br><br>
+        Smoker: 
+        <select name="smoker">
+            <option>Yes</option>
+            <option>No</option>
+        </select><br><br>
+        Activity Level:
+        <select name="activity">
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+        </select><br><br>
+        City or ZIP: <input type="text" name="city" required><br><br>
+        <input type="submit" value="Predict Risk">
+    </form>
+
+    {% if risk_result %}
+        <h2>Result: {{ risk_result }}</h2>
+    {% endif %}
+</body>
+</html>
